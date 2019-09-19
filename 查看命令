@@ -1,2 +1,2 @@
-lsmod |grep -i sas查看阵列卡模块
-modinfo megaraid_sas | less 查看阵列卡版本等信息
+lsmod |grep -i sas 查看阵列卡模块
+modinfo megaraid_sas 查看阵列卡版本等信息
