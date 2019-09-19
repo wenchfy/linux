@@ -1,0 +1,24 @@
+#安装yum-utils工具
+yum -y install yum-utils
+
+#创建yum包存放文件夹
+mkdir /root/mysql-server
+
+#获取所需安装包和依赖包
+yum -y install --downloadonly --downloaddir=/root/mysql-server/ mysql-server mysql
+
+#安装createrepo工具 
+yum -y install createrepo
+
+#创建本地yum包
+createrepo -pdo mysql-server/ mysql-server/
+
+#创建本地yum repo
+vi mysql.repo 
+
+[mysql]
+name=mysql
+baseurl=file:///root/mysql-server
+enabled=1
+gpgcheck=0
+
