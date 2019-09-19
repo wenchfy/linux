@@ -1,0 +1,1 @@
+lsmod |grep -i sas查看阵列卡驱动版本
