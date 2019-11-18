@@ -1,0 +1,12 @@
+vi /etc/sysconfig/network-scripts/ifcfg-ens33 
+#修改NAME=ens33为eth0 修改DEVICE=ens33为eth0
+
+mv ifcfg-ens33 ifcfg-eth0  
+
+vi /etc/default/grub 
+#加入net.ifnames=0 biosdevname=0到GRUBCMDLINELINUX变量来实现
+
+grub2-mkconfig -o /boot/grub2/grub.cfg
+#运行命令grub2-mkconfig -o /boot/grub2/grub.cfg 来重新生成GRUB配置并更新内核参数
+
+reboot生效
